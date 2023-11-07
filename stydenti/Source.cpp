@@ -2,7 +2,34 @@
 #include <string>
 using namespace std;
 
-class Stydent;
+class Stydent
+{
+private:
+	int age;
+	string name;
+
+public:
+	Stydent(int age, string name) {
+		this->age = age;
+		this->name = name;
+	}
+	Stydent() {
+		age = 0;
+		name = " ";
+	}
+	void print() {
+		cout << "Mame -> " << name << "\tAge -> " << age << endl;
+	}
+	string write() {
+		cout << "Write Name" << endl;
+		cin >> name;
+		cout << "Write Age" << endl;
+		cin >> age;
+		return name; age;
+	}
+
+
+};
 
 int main() {
 	const int size = 2;
@@ -36,31 +63,3 @@ int main() {
 	
 	return 0;
 }
-class Stydent
-{
-private:
-	int age;
-	string name;
-
-public:
-	Stydent(int age, string name) {
-		this->age = age;
-		this->name = name;
-	}
-	Stydent() {
-		age = 0;
-		name = " ";
-	}
-	void print() {
-		cout << "Mame -> " << name << "\tAge -> " << age << endl;
-	}
-	string write() {
-		cout << "Write Name" << endl;
-		cin >> name;
-		cout << "Write Age" << endl;
-		cin >> age;
-		return name; age;
-	}
-
-
-};
