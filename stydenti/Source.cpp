@@ -20,7 +20,7 @@ int main() {
 		cin >> z;
 		switch (z)
 		{
-			//���������� �������
+			//zapolnyaem massiv
 		case 1: for (int i = 0; i < rows; i++)
 		{
 			cout << endl;
@@ -33,7 +33,7 @@ int main() {
 
 		}
 			  break;
-			  //����� ����� � ��������
+			  //vivodim massiv
 		case 2: for (int i = 0; i < rows; i++)
 		{
 			cout << i << "->";
@@ -45,6 +45,7 @@ int main() {
 			cout << endl;
 		}
 			  break;
+			  //redaktiryem massiv(konkretnoe znachenie v massive)
 		case 3:
 			for (int i = 0; i < rows; i++)
 			{
@@ -81,14 +82,13 @@ int main() {
 					}
 				}
 				break;
-			
-			
-			
-			/*case 4: {
+			//ydalyaem konkretnyu stroky v massive
+			case 4: {
 			cout << "Choose witch student you want remove" << endl;
 			cin >> x;
 
-			}*/
+
+			}
 		case 9: stop = false;
 			delete[] mass;
 			break;
