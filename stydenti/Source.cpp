@@ -1,65 +1,100 @@
 #include <iostream>
 #include <string>
+#include "Person.h"
+#include "Student.h"
 using namespace std;
 
-class Stydent
-{
-private:
-	int age;
-	string name;
-
-public:
-	Stydent(int age, string name) {
-		this->age = age;
-		this->name = name;
-	}
-	Stydent() {
-		age = 0;
-		name = " ";
-	}
-	void print() {
-		cout << "Mame -> " << name << "\tAge -> " << age << endl;
-	}
-	string write() {
-		cout << "Write Name" << endl;
-		cin >> name;
-		cout << "Write Age" << endl;
-		cin >> age;
-		return name; age;
-	}
-
-
-};
 
 int main() {
-	const int size = 2;
-	int z;
+	int rows;
+	int z, x, o;
 	bool stop = true;
-	Stydent mas1[size];
-	
+	cout << "Write numbers of stydent" << endl;
+	cin >> rows;
+	Student* mass = new Student[rows];
+
 	while (stop)
 	{
-		cout << "1. Creat new Stydent" << endl << "2. Read base of stydent" << endl << "3. Exit" << endl;
+		cout <<endl<< "1. Creat new Stydent" << endl << "2. Read base of stydent" << endl << "3. Change information of stydent" << endl;
+		cout << "4. Remove stydent" << endl << "9. Exit" << endl;
 		cin >> z;
 		switch (z)
 		{
-		case 1: for (int i = 0; i < size; i++)
+			//���������� �������
+		case 1: for (int i = 0; i < rows; i++)
 		{
-			mas1[i].write();
-		}
-			  break;
-		case 2: for (int i = 0; i < size; i++)
-		{
-			mas1[i].print();
-		}
-			  break;
-		case 3: stop = false; break;
-		}
-	}
-	
-	
-	
+			cout << endl;
 
-	
+			mass[i].write_name();
+			mass[i].write_age();
+			mass[i].write_id();
+			mass[i].wtite_kyrs();
+			mass[i].write_groop();
+
+		}
+			  break;
+			  //����� ����� � ��������
+		case 2: for (int i = 0; i < rows; i++)
+		{
+			cout << i << "->";
+			mass[i].print_id();
+			mass[i].print_name();
+			mass[i].print_age();
+			mass[i].print_kyrs();
+			mass[i].print_groop();
+			cout << endl;
+		}
+			  break;
+		case 3:
+			for (int i = 0; i < rows; i++)
+			{
+				cout << i << "->\t";
+				mass[i].print_id();
+				mass[i].print_name();
+				mass[i].print_age();
+				mass[i].print_kyrs();
+				mass[i].print_groop();
+				cout << endl;
+			}
+			cout << endl << "Choose witch student you want change" << endl;
+			cin >> x;
+				cout << "0. ID";
+				cout << "\t1. Name";
+				cout << "\t2. Age";
+				cout << "\t3. Kyrs";
+				cout << "\t4. Groop";
+				cout << endl;
+				cout << endl << "What u want change?" << endl;
+				cin >> o;
+				for (int i = 0; i < rows; i++)
+				{
+					if (x==i)
+					{
+						switch (o)
+						{
+						case 0: mass[x].write_id(); break;
+						case 1: mass[x].write_name(); break;
+						case 2: mass[x].write_age(); break;
+						case 3: mass[x].wtite_kyrs(); break;
+						case 4: mass[x].write_groop(); break;
+						}
+					}
+				}
+				break;
+			
+			
+			
+			/*case 4: {
+			cout << "Choose witch student you want remove" << endl;
+			cin >> x;
+
+			}*/
+		case 9: stop = false;
+			delete[] mass;
+			break;
+		}
+
+	}
+
 	return 0;
 }
