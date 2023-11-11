@@ -101,12 +101,12 @@ int main() {
 					}
 				}
 				break;
+        
 			//ydalyaem konkretnyu stroky v massive
 		case 4: {
 			pop_back(mass, rows);
-
-
 		}break;
+
 		case 9: stop = false;
 			delete[] mass;
 			break;
