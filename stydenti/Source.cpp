@@ -2,7 +2,9 @@
 #include <string>
 #include "Person.h"
 #include "Student.h"
+
 using namespace std;
+
 
 void print(Student*& mass, int& rows) {
 	for (int i = 0; i < rows; i++)
@@ -65,6 +67,7 @@ void change(Student*& mass, int& rows, int& x,int& o) {
 		}
 	}
 }
+
 void pop_back(Student*& mass, int& rows) {
 	int x;
 	cout << "Choose witch student you want remove" << endl;
@@ -80,6 +83,7 @@ void pop_back(Student*& mass, int& rows) {
 		else newMass[i] = mass[i];
 	}
 	delete[] mass;
+
 
 	mass = newMass;
 }
@@ -100,9 +104,7 @@ int main() {
 	int z, x, o;
 	bool stop = true;
 
-
-
-	while (stop) {
+  while (stop) {
 		cout << "Write numbers of stydent" << endl;
 		cin >> rows;
 		Student* mass = new Student[rows];
@@ -144,9 +146,10 @@ int main() {
 						break;
 					}
 				}
+
 				else throw "Errore";
 
-			}
+
 		}
 		catch (...)
 		{
