@@ -3,9 +3,9 @@
 class Student: public Person
 {
 public:
-	int id = 0;
-	string kyrs = "a";
-	string groop = "a";
+	string id = " ";
+	string kyrs = " ";
+	string groop = " ";
 	void print_id() {
 		cout << "ID -> " << id;
 	}
@@ -15,7 +15,7 @@ public:
 	void print_groop() {
 		cout << "\tGroop -> " << groop << "\t";
 	}
-	int write_id() {
+	string write_id() {
 		cout << "Write ID->\t";
 		cin >> id;
 		return id;

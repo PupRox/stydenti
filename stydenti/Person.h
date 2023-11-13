@@ -7,17 +7,17 @@ using std::string;
 class Person
 {
 private:
-	int age;
+	string age;
 	string name;
 
 public:
-	Person(int age, string name) {
+	Person(string age, string name) {
 		this->age = age;
 		this->name = name;
 	}
 	Person() {
-		age = 0;
-		name = "a";
+		age = " ";
+		name = " ";
 	}
 	void print_age() {
 		cout << "\tAge -> " << age;
@@ -30,7 +30,7 @@ public:
 		cin >> name;
 		return name;
 	}
-	int write_age() {
+	string write_age() {
 		cout << "Write Age->\t";
 		cin >> age;
 		return age;
